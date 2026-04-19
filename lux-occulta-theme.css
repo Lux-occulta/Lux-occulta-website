@@ -1,0 +1,159 @@
+/* ============================================================
+   LUX OCCULTA — Farbsystem
+   Dark Mode als Default · Light Mode als Alternative
+   Signaturfarbe: Burgunder (konstant in beiden Modi)
+   ============================================================ */
+
+:root {
+  /* -----------------------------------------------------------
+     DARK MODE (Default — das Haus)
+     ----------------------------------------------------------- */
+
+  /* Hintergründe */
+  --bg-primary: #1A1419;        /* Aubergine-Schwarz, Grundfläche */
+  --bg-secondary: #241D24;      /* Karten, Container, Sektionen */
+  --bg-tertiary: #2E2732;       /* Hover, aktive Flächen, Rahmen */
+
+  /* Signaturfarbe — konstant in beiden Modi */
+  --accent-primary: #6B1F2A;    /* Burgunder-Granat, Überschriften-Akzent, aktive Nav */
+  --accent-primary-hover: #822835; /* Heller beim Hover */
+  --accent-primary-deep: #4A1520;  /* Tiefer, für Schatten/Tiefe */
+
+  /* Zweit-Akzent — sparsam */
+  --accent-secondary: #5C4550;  /* Staubiges Mauve, Linien, Icons */
+  --accent-tertiary: #2D3B2E;   /* Nachtgrün, symbolische Details */
+
+  /* Text */
+  --text-primary: #EDE5D3;      /* Knochenweiß, Haupttext */
+  --text-secondary: #BFB3A0;    /* Gedämpft, Metadaten, Unterüberschriften */
+  --text-muted: #8A7F72;        /* Sehr gedämpft, Fußnoten, Captions */
+
+  /* Linien, Ränder, Teiler */
+  --border-subtle: rgba(237, 229, 211, 0.08);  /* Sehr zart */
+  --border-medium: rgba(237, 229, 211, 0.15);  /* Sichtbare Trennlinien */
+  --border-strong: rgba(107, 31, 42, 0.4);     /* Burgunder-Akzent-Linien */
+
+  /* Schatten */
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 32px rgba(107, 31, 42, 0.15); /* Burgunder-Glimmen */
+}
+
+/* ============================================================
+   LIGHT MODE (Alternative — der Tag)
+   Aktiviert über [data-theme="light"] auf <html> oder <body>
+   ============================================================ */
+
+[data-theme="light"] {
+  /* Hintergründe */
+  --bg-primary: #F5EEE5;        /* Warmes Pergament-Weiß */
+  --bg-secondary: #EDE3D6;      /* Karten, staubig-rosé */
+  --bg-tertiary: #E3D7C8;       /* Hover, Rahmen */
+
+  /* Signaturfarbe — identisch zu Dark Mode */
+  --accent-primary: #6B1F2A;    /* Burgunder bleibt konstant */
+  --accent-primary-hover: #5A1822;
+  --accent-primary-deep: #4A1520;
+
+  /* Zweit-Akzent */
+  --accent-secondary: #7A5F6A;  /* Aufgehelltes Mauve für Tageslicht */
+  --accent-tertiary: #4A5948;   /* Moosgrün, symbolische Details */
+
+  /* Text */
+  --text-primary: #2E1F2B;      /* Tiefes Aubergine statt Schwarz */
+  --text-secondary: #5A4A54;    /* Gedämpft */
+  --text-muted: #8A7A82;        /* Sehr gedämpft */
+
+  /* Linien */
+  --border-subtle: rgba(46, 31, 43, 0.08);
+  --border-medium: rgba(46, 31, 43, 0.15);
+  --border-strong: rgba(107, 31, 42, 0.35);
+
+  /* Schatten */
+  --shadow-soft: 0 2px 12px rgba(46, 31, 43, 0.08);
+  --shadow-medium: 0 4px 24px rgba(46, 31, 43, 0.12);
+  --shadow-glow: 0 0 32px rgba(107, 31, 42, 0.1);
+}
+
+/* ============================================================
+   TYPOGRAFIE (Empfehlung, optional)
+   ============================================================ */
+
+:root {
+  /* Schriftfamilien */
+  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-sans: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", serif; /* Für große Headlines */
+
+  /* Größen */
+  --text-xs: 0.8125rem;   /* 13px — Captions, Metadata */
+  --text-sm: 0.9375rem;   /* 15px — Sekundärtext */
+  --text-base: 1.0625rem; /* 17px — Fließtext, lesbar auf Dark */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.75rem;     /* 28px — Subheadings */
+  --text-2xl: 2.5rem;     /* 40px — Section Titles */
+  --text-3xl: 4rem;       /* 64px — Hero */
+
+  /* Zeilenhöhe */
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  /* Letter-Spacing */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;    /* für Navigation, Caps */
+  --tracking-wider: 0.12em;   /* für kleine Caps-Labels */
+}
+
+/* ============================================================
+   GRUNDANWENDUNG
+   ============================================================ */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Akzent-Überschrift (z.B. "Lux occulta" selbst) */
+.accent-heading {
+  color: var(--accent-primary);
+}
+
+/* Navigation — kleine Caps, weit gespreizt */
+nav a {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-primary);
+}
+
+/* Karten (wie "Was dich erwartet") */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+}
