@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schriftenkammer — Lux occulta</title>
+  <meta name="description" content="Texte, Gedanken und Inspirationen aus dem Kreis Lux occulta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+  </button>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Lux occulta</a>
+      <ul class="nav-links">
+        <li><a href="konzept.html">Konzept</a></li>
+        <li><a href="hueterin.html">Hüterin</a></li>
+        <li><a href="archetypen.html">Archetypen</a></li>
+        <li><a href="angebote.html">Angebote</a></li>
+        <li><a href="schriftenkammer.html">Schriften</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Schriftenkammer</h1>
+    <p class="subtitle">Worte aus dem Kreis</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <p class="lead">
+        Hier sammeln sich Texte, Gedanken und Inspirationen — entstanden in stillen
+        Stunden, im Kreis oder am Rand des Tages.
+      </p>
+    </section>
+
+    <section>
+      <ul class="post-list">
+        <li class="post">
+          <div class="post-meta">21. März 2026 · Frühlingsgleiche</div>
+          <h2 class="post-title"><a href="#">Vom Aufbruch — was die Erwachende uns lehrt</a></h2>
+          <p class="post-excerpt">
+            Wenn die Erde wieder atmet und das Licht zurückkehrt, ruft etwas in uns:
+            erinnere dich. Ein Text über Anfänge und das Vertrauen in das Werdende.
+          </p>
+          <a class="read-more" href="#">Weiterlesen →</a>
+        </li>
+        <li class="post">
+          <div class="post-meta">2. Februar 2026 · Imbolc</div>
+          <h2 class="post-title"><a href="#">Unter der Schneedecke</a></h2>
+          <p class="post-excerpt">
+            Über das, was im Verborgenen wächst — und warum die leisen Phasen
+            die wichtigsten sein können.
+          </p>
+          <a class="read-more" href="#">Weiterlesen →</a>
+        </li>
+        <li class="post">
+          <div class="post-meta">21. Dezember 2025 · Wintersonnenwende</div>
+          <h2 class="post-title"><a href="#">In der tiefsten Nacht</a></h2>
+          <p class="post-excerpt">
+            Ein Brief an alle Frauen, die sich gerade in einer dunklen Phase befinden.
+            Über Hoffnung, die nicht laut sein muss.
+          </p>
+          <a class="read-more" href="#">Weiterlesen →</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Lux occulta · <a href="kontakt.html">Kontakt</a></p>
+  </footer>
+</body>
+</html>

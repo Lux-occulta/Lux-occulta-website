@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Lux occulta</title>
+  <meta name="description" content="Schreib uns — Kontakt zu Lux occulta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+  </button>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">Lux occulta</a>
+      <ul class="nav-links">
+        <li><a href="konzept.html">Konzept</a></li>
+        <li><a href="hueterin.html">Hüterin</a></li>
+        <li><a href="archetypen.html">Archetypen</a></li>
+        <li><a href="angebote.html">Angebote</a></li>
+        <li><a href="schriftenkammer.html">Schriften</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Kontakt</h1>
+    <p class="subtitle">Schreib mir</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <p class="lead">
+        Hast du eine Frage, möchtest dich für einen Kreis anmelden oder einfach
+        nur in Verbindung treten? Schreib mir — ich antworte dir, sobald ich kann.
+      </p>
+    </section>
+
+    <section>
+      <form id="contact-form" action="mailto:marenraduenz@gmail.com" method="post" enctype="text/plain">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          <span>E-Mail</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          <span>Worum geht's?</span>
+          <select name="anliegen">
+            <option>Allgemeine Anfrage</option>
+            <option>Anmeldung Kreis</option>
+            <option>Ritual / Einzelarbeit</option>
+            <option>Workshop / Retreat</option>
+            <option>Sonstiges</option>
+          </select>
+        </label>
+        <label>
+          <span>Nachricht</span>
+          <textarea name="nachricht" rows="6" required></textarea>
+        </label>
+        <button type="submit">Senden</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Direkt erreichbar</h2>
+      <p class="muted">
+        E-Mail: <a href="mailto:marenraduenz@gmail.com">marenraduenz@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Lux occulta · <a href="kontakt.html">Kontakt</a></p>
+  </footer>
+</body>
+</html>
