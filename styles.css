@@ -565,6 +565,44 @@ h3 {
 }
 
 /* ============================================================
+   CONTACT LAYOUT (Bild + Inhalt nebeneinander)
+   ============================================================ */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-top: 1rem;
+  border-top: none;
+}
+
+.contact-image {
+  position: sticky;
+  top: 6rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-medium);
+  background-color: var(--bg-secondary);
+}
+
+.contact-image picture,
+.contact-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-image { position: static; }
+}
+
+/* ============================================================
    FORM
    ============================================================ */
 
