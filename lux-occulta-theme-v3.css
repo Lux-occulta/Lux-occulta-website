@@ -1,0 +1,217 @@
+/* ============================================================
+   LUX OCCULTA — Farbsystem v3
+   
+   Designprinzip: VICE VERSA
+   Was im einen Modus Hintergrund ist, wird im anderen zu Text.
+   Die Seite dreht sich um ihre eigene Achse — wie eine Mondphase.
+   
+   Fünf Grundtöne (Goth-Palette) + ein Signatur-Akzent (Moosgrün)
+   ============================================================ */
+
+/* -----------------------------------------------------------
+   GRUNDPALETTE — konstante Werte
+   Diese ändern sich NIE. Nur ihre Rollen im Vice-Versa-Prinzip.
+   ----------------------------------------------------------- */
+
+:root {
+  /* Die fünf Grundtöne (dunkel → hell) */
+  --color-darkroom: #3A2E3C;      /* Tiefstes Aubergine */
+  --color-blackberry: #4D3239;    /* Gedämpfter Beerenton */
+  --color-mauve-deep: #6B5560;    /* Mittleres Mauve */
+  --color-enigma: #8B7A80;        /* Helles Taupe-Mauve */
+  --color-ashrose: #D9C4C0;       /* Aschiges Altrosa */
+  
+  /* Signatur-Akzent (für Symbole, Zitate, besondere Details) */
+  --color-moss: #3D4A3A;          /* Gedämpftes Nachtgrün */
+}
+
+/* -----------------------------------------------------------
+   DARK MODE (Default)
+   Dunkle Seite des Mondes
+   ----------------------------------------------------------- */
+
+:root {
+  /* Flächen */
+  --bg-primary: var(--color-darkroom);
+  --bg-secondary: var(--color-blackberry);
+  --bg-tertiary: var(--color-mauve-deep);
+  
+  /* Text */
+  --text-primary: var(--color-ashrose);
+  --text-secondary: var(--color-enigma);
+  --text-muted: var(--color-mauve-deep);
+  
+  /* Akzent (Überschriften, aktive Nav, wichtige Details) */
+  --accent: var(--color-ashrose);
+  --accent-hover: #E8D5D1;        /* Aschrose heller bei Hover */
+  
+  /* Signatur-Akzent */
+  --accent-signature: var(--color-moss);
+  
+  /* Linien */
+  --border-subtle: rgba(217, 196, 192, 0.12);
+  --border-medium: rgba(217, 196, 192, 0.22);
+  --border-strong: rgba(217, 196, 192, 0.4);
+  
+  /* Schatten */
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --shadow-medium: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 32px rgba(217, 196, 192, 0.12);
+}
+
+/* -----------------------------------------------------------
+   LIGHT MODE
+   Helle Seite des Mondes — alles umgestülpt
+   ----------------------------------------------------------- */
+
+[data-theme="light"] {
+  /* Flächen — jetzt die hellen Töne */
+  --bg-primary: var(--color-ashrose);
+  --bg-secondary: var(--color-enigma);     /* als Karten-BG */
+  --bg-tertiary: var(--color-mauve-deep);
+  
+  /* Text — jetzt die dunklen Töne */
+  --text-primary: var(--color-darkroom);
+  --text-secondary: var(--color-blackberry);
+  --text-muted: var(--color-mauve-deep);
+  
+  /* Akzent */
+  --accent: var(--color-darkroom);
+  --accent-hover: var(--color-blackberry);
+  
+  /* Signatur-Akzent bleibt Moosgrün — funktioniert auf beiden */
+  --accent-signature: var(--color-moss);
+  
+  /* Linien */
+  --border-subtle: rgba(58, 46, 60, 0.12);
+  --border-medium: rgba(58, 46, 60, 0.22);
+  --border-strong: rgba(58, 46, 60, 0.4);
+  
+  /* Schatten */
+  --shadow-soft: 0 2px 12px rgba(58, 46, 60, 0.08);
+  --shadow-medium: 0 4px 24px rgba(58, 46, 60, 0.12);
+  --shadow-glow: 0 0 32px rgba(58, 46, 60, 0.1);
+}
+
+/* ============================================================
+   TYPOGRAFIE
+   ============================================================ */
+
+:root {
+  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-sans: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 4rem;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.12em;
+}
+
+/* ============================================================
+   GRUNDANWENDUNG
+   ============================================================ */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Signatur-Akzent für besondere Details (Symbole, Zitate, Linien) */
+.signature-accent {
+  color: var(--accent-signature);
+}
+
+/* Navigation */
+nav a {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text-primary);
+}
+
+/* Karten */
+.card {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .card {
+  color: var(--color-ashrose);  /* Im Light Mode ist Card-BG dunkler → heller Text */
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--bg-primary);   /* Vice versa: BG-Farbe wird Text-Farbe */
+  border: 1px solid var(--accent);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-wide);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--text-primary);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-wide);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}

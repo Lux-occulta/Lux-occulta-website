@@ -37,15 +37,15 @@
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
           <defs>
             <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#f4e9d8" />
-              <stop offset="60%" stop-color="#c9b48a" />
-              <stop offset="100%" stop-color="#3a2f4a" />
+              <stop offset="0%" style="stop-color: var(--text-primary)" />
+              <stop offset="60%" style="stop-color: var(--text-secondary)" />
+              <stop offset="100%" style="stop-color: var(--bg-secondary)" />
             </radialGradient>
           </defs>
           <circle cx="100" cy="100" r="96" fill="url(#moonGlow)" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="#f4e9d8" stroke-width="0.8" opacity="0.6" />
-          <circle cx="100" cy="100" r="78" fill="none" stroke="#f4e9d8" stroke-width="0.4" opacity="0.4" />
-          <path d="M100 40 L108 92 L160 100 L108 108 L100 160 L92 108 L40 100 L92 92 Z" fill="#f4e9d8" opacity="0.85" />
+          <circle class="avatar-ring" cx="100" cy="100" r="60" fill="none" stroke-width="0.8" opacity="0.6" />
+          <circle class="avatar-ring" cx="100" cy="100" r="78" fill="none" stroke-width="0.4" opacity="0.4" />
+          <path class="avatar-star" d="M100 40 L108 92 L160 100 L108 108 L100 160 L92 108 L40 100 L92 92 Z" opacity="0.85" />
         </svg>
       </div>
       <h1 class="brand">Lux occulta</h1>
@@ -56,8 +56,8 @@
         Lux occulta lädt ein zu Begegnung, Ritual und gelebter Spiritualität.
       </p>
       <div class="cta-row">
-        <a class="btn" href="konzept.html">Das Konzept</a>
-        <a class="btn" href="angebote.html">Kreis &amp; Rituale</a>
+        <a class="btn-primary" href="konzept.html">Das Konzept</a>
+        <a class="btn-secondary" href="angebote.html">Kreis &amp; Rituale</a>
       </div>
     </header>
 
