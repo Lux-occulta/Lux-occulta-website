@@ -290,6 +290,33 @@ li { margin-bottom: 0.5rem; }
   line-height: var(--leading-loose);
 }
 
+/* Gedicht im Hero — drei Strophen mit großzügigem Atem */
+.hero-poem {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.hero-poem .strophe + .strophe {
+  margin-top: 2em;
+}
+
+.hero-poem p {
+  margin-bottom: 0.75em;
+}
+
+.hero-poem p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .hero-poem { text-align: center; }
+}
+
 /* ============================================================
    PAGE HEADER (innere Seiten)
    ============================================================ */
