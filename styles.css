@@ -535,6 +535,42 @@ h3 {
 }
 
 /* ============================================================
+   PAGE POEM — prosaische Strophen auf inneren Seiten
+   (gleiche Typografie wie Hero, ohne Grid-Layout)
+   ============================================================ */
+
+.page-poem {
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.page-poem > * + * { margin-top: 2em; }
+.page-poem p { margin-bottom: 0.75em; }
+.page-poem p:last-child { margin-bottom: 0; }
+
+/* Hervorgehobener Kurz-Block (z.B. Klinge/Schale) */
+.page-poem .pull-quote {
+  font-style: italic;
+  color: var(--text-primary);
+  padding: 0.25em 0;
+}
+
+/* Finale Strophe — etwas mehr Abstand */
+.page-poem .strophe-final {
+  margin-top: 3.5em;
+}
+
+@media (min-width: 768px) {
+  .page-poem { text-align: left; }
+  .page-poem .pull-quote { text-align: center; }
+}
+
+/* ============================================================
    ARCHETYPEN
    ============================================================ */
 
