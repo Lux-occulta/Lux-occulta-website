@@ -565,9 +565,33 @@ h3 {
   margin-top: 3.5em;
 }
 
+/* Porträt — Mobile: oben, volle Breite */
+.page-portrait {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.page-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: var(--shadow-soft);
+}
+
 @media (min-width: 768px) {
   .page-poem { text-align: left; }
   .page-poem .pull-quote { text-align: center; }
+
+  /* Porträt — Desktop: schwebt rechts oben, Text fließt links daneben */
+  .page-portrait {
+    float: right;
+    width: 240px;
+    margin: 0 0 1.5em 2rem;
+    shape-outside: inset(0);
+  }
+
+  /* Erste Strophe nach dem Porträt soll auf gleicher Höhe starten */
+  .page-poem .page-portrait + .strophe { margin-top: 0; }
 }
 
 /* ============================================================
